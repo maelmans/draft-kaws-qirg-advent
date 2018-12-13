@@ -235,6 +235,28 @@
 	    typically run a higher-layer quantum application such as
 	    QKD.
 	  </t>
+          <t hangText="Entangled Pair (EP):">
+            An entangled pair is a special state of two qubits, known
+            as an EPR pair <xref target='QEnt'/>.  An entangled pair
+            of qubits c@A and c@B is denoted [[c@A, c@B]].
+          </t>
+          <t>
+            The process of entangling two particles c@A and c@B is
+            denoted as follows:
+            <figure>
+              <artwork align='left'>
+ent(c@A, c@B) -&gt; [[c@A, c@B]]
+              </artwork>
+            </figure>
+            ent(c@A, c@B) may take time T and succeed with probability
+            P, and yield an entangled pair [[c@A, c@B]] of fidelity F.
+          </t>
+          <t hangText='Fidelity:'>
+            A measure of the quality of the entanglement of an EP
+            (xref target='QFid'/>).  Fidelity lies in the interval [0,
+            1] where a higher value indicates better quality; usable
+            fidelity values lie in the half-open interval (0.5, 1].
+          </t>
 	  <t hangText="Communication qubit:">
 	    A qubit is called a communication qubit if it is possible
 	    to produce entanglement between this qubit and a traveling
@@ -268,28 +290,6 @@
 	  </t>
 	  <t>
 	    A storage qubit s at node B is denoted s@B.
-	  </t>
-	  <t hangText="Entangled Pair (EP):">
-	    An entangled pair is a special state of two qubits, known
-	    as an EPR pair <xref target='QEnt'/>.  An entangled pair
-	    of qubits c@A and c@B is denoted [[c@A, c@B]].
-	  </t>
-	  <t>
-	    The process of entangling two particles c@A and c@B is
-	    denoted as follows:
-	    <figure>
-	      <artwork align='left'>
-ent(c@A, c@B) -&gt; [[c@A, c@B]]
-	      </artwork>
-	    </figure>
-	    ent(c@A, c@B) may take time T and succeed with probability
-	    P, and yield an entangled pair [[c@A, c@B]] of fidelity F.
-	  </t>
-	  <t hangText='Fidelity:'>
-	    A measure of the quality of the entanglement of an EP
-	    (xref target='QFid'/>).  Fidelity lies in the interval [0,
-	    1] where a higher value indicates better quality; usable
-	    fidelity values lie in the half-open interval (0.5, 1].
 	  </t>
 	  <t hangText='Swap:'>
 	    Two qubits located in the same CQN can interchange states
