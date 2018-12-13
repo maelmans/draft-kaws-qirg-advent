@@ -331,7 +331,7 @@ dist([[c1@A, c1@B]], [[c2@A, c2@B]]) -&gt; [[c3@A, c3@B]]
 entSwap([[c@A, c1@B]], [[c2@B, c@C]]) -&gt; [[c@A, c@C]]
 	      </artwork>
 	    </figure>
-	    to create a new EP between q@A and q@C.  This is how
+	    to create a new EP between c@A and c@C.  This is how
 	    "multihop" EPs are created from a sequence of "single-hop" EPs.
 	  </t>
 	  <t>
