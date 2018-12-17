@@ -296,11 +296,11 @@ ent(c@A, c@B) -&gt; [[c@A, c@B]]
 	    (<xref target='QDist'/>).  For example, the states of a
 	    communication qubit and a storage qubit at A can be
 	    swapped as follows:
-	    <figure>
-	      <artwork align='left'>
+		<figure>
+		 <artwork align='left'>
 swap(c@A, s@A)
-	      </artwork>
-	    </figure>
+	     	 </artwork>
+		</figure>
 	    If c@A was entangled with c@B, the result is that s@A is
 	    now entangled with c@B.
 	  </t>
@@ -345,7 +345,7 @@ entSwap([[c@A, c1@B]], [[c2@B, c@C]]) -&gt; [[c@A, c@C]]
 ent(c@A, c@B)  -&gt; [[c@A, c@B]]	# entangle
 swap(c@B, s@B) -&gt; [[c@A, s@B]]	# swap EP to storage qubit
 ent(c@B, c@C)  -&gt; [[c@B, c@C]]	# use freed up qubit c@B
-swap(s@B, c@B) -&gt; [[c@A, c@C]]	# create multihop EP
+entSwap(c@A, c@B) -&gt; [[s@B, c@C]]	# create multihop EP
 	      </artwork>
 	    </figure>
 	  </t>
