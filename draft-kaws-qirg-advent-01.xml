@@ -119,7 +119,7 @@
       The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
       NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
       "OPTIONAL" in this document are to be interpreted as described
-      in <xref target="RFC2119"/>.
+      in <xref target="RFC2119">RFC2119</xref>.
     </t>
   </note>
 </front>
@@ -129,7 +129,7 @@
     <t>
       Quantum networking is an emerging field using the strange (even
       counterintuitive) properties of quantum mechanics to bring new,
-      useful capabilities to networking.  One of these is
+      useful capabilities to computing and networking.  One of these is
       “entanglement” <xref target='QEnt'/>, where the state of a group
       of particles must be described as a unit -- it cannot be
       decomposed to the state of each particle independently.
@@ -142,15 +142,18 @@
       A Quantum Network consists of quantum nodes and links. Here, we
       will be concerned with controllable quantum nodes (CQN) that
       allow control decisions. We posit a classical network parallel
-      to the quantum network, with classical nodes (CN) and links.  A
-      classical node is colocated with a quantum node; a classical
+      to the quantum network, with classical nodes (CN) and links.
+      A classical node is colocated with a quantum node; a classical
       link may be a fiber or wavelength parallel to the corresponding
-      quantum link.  Such a classical link is required by most quantum
+      quantum link. The existence of such a classical link is required by most quantum
       methods to create EPs deterministically or in a heralded
-      fashion, where the creation of EPs is deterministic conditioned
+      fashion, where the creation of EPs is conditioned
       on a specific signal.  To make useful decisions, it is desirable
       to augment this data to describe the capabilities and states of
       quantum nodes and links.
+      At current time there is a need for classical links besides
+      quantum links. In the future this might change into a situation
+      where classical links will perhaps become obsolete.
     </t>
     <t>
       This document proposes to carry entanglement capability data as
@@ -194,12 +197,15 @@
 	<list style="hanging">
 	  <t hangText='Quantum link:'>
 	    A quantum link is a connection transporting traveling
-	    qubits, typically photons.  This could be a physical link.
-	    This document does not describe the usage of this link.
+	    qubits, typically photons. This could be a physical link, 
+	    or by means of teleportation over pre-established entanglement amongst distant network nodes. 
+	    Such pre-shared entanglement effectively forms a shortcut - a virtual quantum link - 
+            which can be used exactly once.
+	    This document does not describe the usage of these links itself.
 	  </t>
 	  <t hangText='Classical link:'>
 	    A classical link is a connection transporting packets.
-	    This could be a physical link.  The proposed extensions in
+	    This could be a physical or virtual link carried over a (MPLS) network.  The proposed extensions in
 	    this document use these links to exchange capabilities.
 	  </t>
 	  <t hangText="Controllable Quantum Node (CQN):">
@@ -253,7 +259,7 @@ ent(c@A, c@B) -&gt; [[c@A, c@B]]
           </t>
           <t hangText='Fidelity:'>
             A measure of the quality of the entanglement of an EP
-            (xref target='QFid'/>).  Fidelity lies in the interval [0,
+            <xref target="QFid">QFid</xref>).  Fidelity lies in the interval [0,
             1] where a higher value indicates better quality; usable
             fidelity values lie in the half-open interval (0.5, 1].
           </t>
@@ -299,7 +305,7 @@ ent(c@A, c@B) -&gt; [[c@A, c@B]]
 		<figure>
 		 <artwork align='left'>
 swap(c@A, s@A)
-	     	 </artwork>
+</artwork>
 		</figure>
 	    If c@A was entangled with c@B, the result is that s@A is
 	    now entangled with c@B.
@@ -316,7 +322,7 @@ swap(c@A, s@A)
 	    <figure>
 	      <artwork align='left'>
 dist([[c1@A, c1@B]], [[c2@A, c2@B]]) -&gt; [[c3@A, c3@B]]
-	      </artwork>
+</artwork>
 	    </figure>
 	  </t>
 	  <t>
@@ -329,7 +335,7 @@ dist([[c1@A, c1@B]], [[c2@A, c2@B]]) -&gt; [[c3@A, c3@B]]
 	    <figure>
 	      <artwork align='left'>
 entSwap([[c@A, c1@B]], [[c2@B, c@C]]) -&gt; [[c@A, c@C]]
-	      </artwork>
+</artwork>
 	    </figure>
 	    to create a new EP between c@A and c@C.  This is how
 	    "multihop" EPs are created from a sequence of "single-hop" EPs.
@@ -340,15 +346,15 @@ entSwap([[c@A, c1@B]], [[c2@B, c@C]]) -&gt; [[c@A, c@C]]
 	    communication qubits to create the needed EPs.  If, in the
 	    above example, B doesn't have two communication qubits c1
 	    and c2, the following can be done:
-	    <figure>
-	      <artwork align='left'>
+<figure>
+<artwork align='left'>
 ent(c@A, c@B)  -&gt; [[c@A, c@B]]	# entangle
 swap(c@B, s@B) -&gt; [[c@A, s@B]]	# swap EP to storage qubit
 ent(c@B, c@C)  -&gt; [[c@B, c@C]]	# use freed up qubit c@B
 entSwap(c@A, c@B) -&gt; [[s@B, c@C]]	# create multihop EP
-	      </artwork>
-	    </figure>
-	  </t>
+</artwork>
+</figure>
+</t>
 	</list>
       </t>
     </section>
@@ -367,7 +373,7 @@ entSwap(c@A, c@B) -&gt; [[s@B, c@C]]	# create multihop EP
  A                 B                A, B: QEN
     .           .       
        U --- V             X, Y, Z, U, V: CQNs
-	</artwork>
+</artwork>
       </figure>
     </t>
     <t>
